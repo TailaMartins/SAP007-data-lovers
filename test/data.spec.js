@@ -1,3 +1,4 @@
+
 import { filterGenero, filterStatus, filterEspecie, filterNome, sortByName, computeStats  } from '../src/data.js';
 const personagens = [
   {
@@ -64,6 +65,7 @@ describe("filtro Especie", () => {
 describe("filtro nome", () => {
   it("Deverá ser uma função", () => {
     expect(typeof filterEspecie).toBe("function"); 
+
   });
 
   it("Devera filtrar o nome digitado", () => {
@@ -82,12 +84,8 @@ const nome = [
 },
 ]
 
-describe("ordenar de A-Z ", () => {
-  it("Deverá ser uma função", () => {
-    expect(typeof sortByName).toBe("function"); 
-  });
 
-  it("Devera ordenar de A-z como selecionado pelo select", () => {
+ it("Devera ordenar de A-z como selecionado pelo select", () => {
     expect(sortByName(nome, "ordenarAZ" )).toStrictEqual(nome)
  })
  it("Devera retornar  de Z-a", () => {
