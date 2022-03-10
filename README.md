@@ -28,6 +28,9 @@ O planejamento e organização do projeto foi feito com método Kanban, utilizan
 ![](/trello.png)
 
 ## Persona e História de Usuários
+![](/Carina.png)
+![](/Ivan.png)
+![](/Luan.png)
 
 ## Funcionalidade
 
