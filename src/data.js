@@ -10,7 +10,7 @@ export const filterEspecie = (data, especie) => data.filter (personagens =>{
   return personagens.species === especie;
 })
 
-export const filternome =  (data, buscaNome) => data.filter (personagens => {
+export const filterNome =  (data, buscaNome) => data.filter (personagens => {
   return personagens.name.toLowerCase().includes(buscaNome.toLowerCase());
 });
 
@@ -21,7 +21,6 @@ export const sortByName = (data, order) => {
     return data.sort((a, b) => a.name > b.name ? -1 : 1)
 } 
 };
-
 
 export const computeStats = (data) => {
   return data.length;
