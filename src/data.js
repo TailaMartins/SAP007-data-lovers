@@ -18,7 +18,7 @@ export const sortByName = (data, order) => {
   if (order === "ordenarAZ") {
   return data.sort((a, b) => a.name < b.name ? -1 : 1)
 } else {
-    return data.sort((a, b) => a.name > b.name ? -1 : 1)
+  return data.sort((a, b) => a.name > b.name ? -1 : 1)
 } 
 };
 
