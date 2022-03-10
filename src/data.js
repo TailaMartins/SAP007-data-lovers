@@ -22,7 +22,6 @@ export const sortByName = (data, order) => {
 } 
 };
 
-
 export const computeStats = (data) => {
   return data.length;
 }
