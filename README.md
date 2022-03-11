@@ -47,7 +47,7 @@ A aplicação foi desenvolvida pensando nos fãs e suas necessidades de visualiz
 ![](/image.png)
 
 ## Testes Usabilidade
-Foi constatado que todas as funcionalidades da aplicação, funcinam em mobile
+Foi constatado que todas as funcionalidades da aplicação, funcionam em mobile
 ![](/testeUser.png)
  
 
