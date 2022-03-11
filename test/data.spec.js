@@ -100,7 +100,6 @@ describe("ordernar de A-z", () => {
   })
 });
 
-
 // calculo
 describe("calcular quantidade total", () => {
   it("Deverá ser uma função", () => {
