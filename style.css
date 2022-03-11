@@ -44,7 +44,7 @@ body {
 }
 
 .nome-rick-and-morty {
-    width: 100%;
+    width: 90%;
 }
 
 /*pagina home*/
@@ -78,26 +78,24 @@ body {
     align-items: center;
     padding: 00.5rem;
 }
-
 .barra-de-pesquisa{
     display: flex;
+    
 }
-
 .pesquisar {
+    margin: 6px;
     border: none;
     padding: 0.9rem;
     font-family: 'Amatic SC', cursive;
-    margin: 6px;
-    position: relative;
-    display: inline-block;
     font-size: 1.2rem;
     border-radius: 500px;
-    background: #66ff66;
-    box-sizing: border-box;
+    background: #66ff66;   
 }
 ::placeholder {
     color: #0a0b0c;
 }
+
+
 .btn-filtro:first-child {
     margin-left: 0;
 }
@@ -125,6 +123,7 @@ body {
 }
 #lista-cards {
     padding: 1rem;
+    box-sizing: content-box;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -175,6 +174,16 @@ body {
     font-weight: bold;
     font-size: 22px;
 }
+#voltar-ao-topo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 10px;
+    right: 30px;
+    width: 30px;
+    height: 30px;
+}
 .rodape {
     padding: 2rem;
     background: #fefefe;
@@ -190,5 +199,35 @@ body {
     text-decoration: none;
     color: #0a0b0c;
 }
+
+@media screen and (max-width: 740px){
+    body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    }
+    
+}
+
+@media screen and (max-width: 560px){
+    body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    }
+    
+}
+
+@media screen and (max-width: 480px) {
+    body {
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: center;
+    }    
+}
+
 
 

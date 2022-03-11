@@ -1,96 +1,86 @@
 import data from './data/rickandmorty/rickandmorty.js';
-import { filterData, sortBy, computeStats, filternome} from './data.js';
+import {filterGenero, filterStatus, filterEspecie, sortByName,filterNome, computeStats} from './data.js';
+
 
 function aparecerCards(data) {
-  document.getElementById("lista-cards").innerHTML = data.map((item) => ` 
+  document.getElementById("lista-cards").innerHTML = data.map((personagens) => ` 
   <div class="card">
     <div class="mostrar-cards">
       <div class="cards-frente">
-        <img src="${item.image}">
-        <p>Nome:${item.name}</p>
+        <img src="${personagens.image}">
+        <p>Nome:${personagens.name}</p>
       </div>
       <div class="card-costa">
-          <p>Genero:${item.gender}</p>
-          <p>Status:${item.status}</p>
-          <p>Especie:${item.species}</p>
-          <p>Origem:${item.origin.name}</p>
-          <p>Episodios que aparecem:${item.episode.length}</p>
-          <p>Local onde vive:${item.location.name}</p>
-          <p>Data de criação: ${item.created}</p>
-          
+          <p>Genero:${personagens.gender}</p>
+          <p>Status:${personagens.status}</p>
+          <p>Especie:${personagens.species}</p>
+          <p>Origem:${personagens.origin.name}</p>
+          <p>Episodios que aparecem:${personagens.episode.length}</p>
+          <p>Local onde vive:${personagens.location.name}</p>
+          <p>Data de criação: ${personagens.created}</p>  
       </div>
     </div>
   </div>
      
-` ).join(''); // tirou a virgulazinha que aparecia
-};
+` ).join(''); 
+}
 aparecerCards(data.results);
 
-function ordenarPersonagens(evt) {
-evt.preventDefault();
-const selectOrdem = sortBy(data.results, evt.target.value);
-aparecerCards(selectOrdem);  
+
+function filtroGenero(e) {
+  e.preventDefault();
+  const genero = document.getElementById("selectGenero").value;  
+  const mostrarGenero = filterGenero(data.results, genero);
+  document.getElementById("percentualTotal").innerHTML = `o total de personagens nessa categoria é ${computeStats(mostrarGenero)}`
+  aparecerCards(mostrarGenero);
 }
-//função do filtro;
-function filtroPersonagem(evt) {
-  evt.preventDefault();
-  const genero = document.getElementById("selectGenero").value;
+
+function filtroStatus(e) {
+  e.preventDefault();
+  const status = document.getElementById("selectStatus").value;
+  const mostrarStatus = filterStatus(data.results, status)
+  document.getElementById("percentualTotal").innerHTML = `o total de personagens nessa categoria é ${computeStats(mostrarStatus)}`
+  aparecerCards(mostrarStatus);
+}
+
+function filtroEspecie(e) {
+  e.preventDefault();
   const especie = document.getElementById("selectEspecie").value;
-  const status = document.getElementById("selectStatus").value; 
-
-  let fData = data.results
-
-  if (genero != "") {
-    fData = filterData(fData, ["gender", genero]);
-
-    const selectPersonagens = {
-      'totalLenght': data.results.length,
-      'selectedLenght': fData.length
-    };
-    const percentualTotal = computeStats(selectPersonagens);
-    document.getElementById("percentualTotal").innerHTML = `A porcentagem de personagens é: ${percentualTotal} % `  
-  }
-  if (status !="") {
-    fData = filterData(fData, ["status", status])
-    const selectPersonagens = {
-      'totalLenght': data.results.length,
-      'selectedLenght': fData.length
-    };
-    const percentualTotal = computeStats(selectPersonagens);
-    document.getElementById("percentualTotal").innerHTML = `A porcentagem de personagens é: ${percentualTotal} % `  
-  }
-
-  if (especie != "") {
-    fData = filterData(fData, ["species", especie]);
-    const selectPersonagens = {
-      'totalLenght': data.results.length,
-      'selectedLenght': fData.length
-    };
-    const percentualTotal = computeStats(selectPersonagens);
-    document.getElementById("percentualTotal").innerHTML = `A porcentagem de personagens é: ${percentualTotal} % `  
-  }
-  
-  aparecerCards(fData);
+  const mostrarEspecie = filterEspecie(data.results, especie)
+  document.getElementById("percentualTotal").innerHTML = `o total de personagens nessa categoria é ${computeStats(mostrarEspecie)}`
+  aparecerCards(mostrarEspecie);
 }
 
-function pesquisarNome(evt){
-  evt.preventDefault();
-  const devolveNome = filternome(data.results, evt.target.value);
-
-  aparecerCards(devolveNome);
+function ordenarPersonagens(e) {
+    e.preventDefault();
+    const selectOrdem = document.getElementById("selectOrdem").value;
+    const mostrarOrdem = sortByName(data.results, selectOrdem);
+    aparecerCards(mostrarOrdem);
 }
 
-function limparFiltros(){
-  window.location.reload();
+function pesquisarNome(e) {
+    e.preventDefault();
+    const pesquisaNome = document.getElementById("pesquisarNome").value
+    const devolveNome = filterNome(data.results, pesquisaNome)
+    aparecerCards(devolveNome);
 }
 
+function limparFiltros() {
+    window.location.reload();
+}
 
-document.getElementById("selectOrdem").addEventListener("change", ordenarPersonagens);
-document.getElementById("selectStatus").addEventListener("change", filtroPersonagem);
-document.getElementById("selectGenero").addEventListener("change", filtroPersonagem);
-document.getElementById("selectEspecie").addEventListener("change", filtroPersonagem);
-document.getElementById("pesquisarNome").addEventListener("keyup", pesquisarNome);
-document.getElementById("limparFiltro").addEventListener("click", limparFiltros);
+  function voltarTopo() {
+    window.scrollTo(0, 0);
+}
+
+  document.getElementById("selectOrdem").addEventListener("change", ordenarPersonagens);
+  document.getElementById("selectStatus").addEventListener("change", filtroStatus);
+  document.getElementById("selectGenero").addEventListener("change", filtroGenero);
+  document.getElementById("selectEspecie").addEventListener("change", filtroEspecie);
+  document.getElementById("pesquisarNome").addEventListener("keyup", pesquisarNome);
+  document.getElementById("limparFiltro").addEventListener("click", limparFiltros);
+  document.getElementById("voltar-ao-topo").addEventListener("click", voltarTopo);
+
 
 
 
