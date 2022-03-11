@@ -83,15 +83,19 @@ const nome = [
  { "name": "Summer Smith",
 },
 ]
-
+describe("ordernar de A-z", () => {
+  it("Deverá ser uma função", () => {
+    expect(typeof sortByName).toBe("function");
+  });
 
  it("Devera ordenar de A-z como selecionado pelo select", () => {
     expect(sortByName(nome, "ordenarAZ" )).toStrictEqual(nome)
  })
  it("Devera retornar  de Z-a", () => {
   expect(sortByName(nome, "ordenarZA")).toStrictEqual(nome);
+})
 });
-});
+
 
 // calculo
 describe("calcular quantidade total", () => {
