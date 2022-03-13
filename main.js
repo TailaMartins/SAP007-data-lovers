@@ -1,6 +1,7 @@
 import data from './data/rickandmorty/rickandmorty.js';
-import {filterGenero, filterStatus, filterEspecie, sortByName,filterNome, computeStats} from './data.js';
+import { filterData, sortByName,filterNome, computeStats} from './data.js';
 
+const devolvePersonagens = data.results;
 
 function aparecerCards(data) {
   document.getElementById("lista-cards").innerHTML = data.map((personagens) => ` 
@@ -24,62 +25,53 @@ function aparecerCards(data) {
      
 ` ).join(''); 
 }
-aparecerCards(data.results);
+aparecerCards(devolvePersonagens);
 
-
-function filtroGenero(e) {
-  e.preventDefault();
-  const genero = document.getElementById("selectGenero").value;  
-  const mostrarGenero = filterGenero(data.results, genero);
-  document.getElementById("percentualTotal").innerHTML = `o total de personagens nessa categoria é ${computeStats(mostrarGenero)}`
-  aparecerCards(mostrarGenero);
+function filtrarGenero(e) {
+e.preventDefault();
+const genero = document.getElementById("selectGenero").value;  
+const mostrarGenero = filterData(devolvePersonagens,"gender",genero);
+document.getElementById("percentualTotal").innerHTML = `o total de personagens nessa categoria é ${computeStats(mostrarGenero)}`
+aparecerCards(mostrarGenero);
 }
 
-function filtroStatus(e) {
-  e.preventDefault();
-  const status = document.getElementById("selectStatus").value;
-  const mostrarStatus = filterStatus(data.results, status)
-  document.getElementById("percentualTotal").innerHTML = `o total de personagens nessa categoria é ${computeStats(mostrarStatus)}`
-  aparecerCards(mostrarStatus);
+function filtrarStatus(e) {
+e.preventDefault();
+const status = document.getElementById("selectStatus").value;
+const mostrarStatus = filterData(devolvePersonagens,"status", status)
+document.getElementById("percentualTotal").innerHTML = `o total de personagens nessa categoria é ${computeStats(mostrarStatus)}`
+aparecerCards(mostrarStatus);
 }
 
-function filtroEspecie(e) {
-  e.preventDefault();
-  const especie = document.getElementById("selectEspecie").value;
-  const mostrarEspecie = filterEspecie(data.results, especie)
-  document.getElementById("percentualTotal").innerHTML = `o total de personagens nessa categoria é ${computeStats(mostrarEspecie)}`
-  aparecerCards(mostrarEspecie);
+function filtrarEspecie(e) {
+e.preventDefault();
+const especie = document.getElementById("selectEspecie").value;
+const mostrarEspecie = filterData(devolvePersonagens,"species",especie)
+document.getElementById("percentualTotal").innerHTML = `o total de personagens nessa categoria é ${computeStats(mostrarEspecie)}`
+aparecerCards(mostrarEspecie);
 }
 
 function ordenarPersonagens(e) {
-    e.preventDefault();
-    const selectOrdem = document.getElementById("selectOrdem").value;
-    const mostrarOrdem = sortByName(data.results, selectOrdem);
-    aparecerCards(mostrarOrdem);
+e.preventDefault();
+const selectOrdem = document.getElementById("selectOrdem").value;
+const mostrarOrdem = sortByName(devolvePersonagens, selectOrdem);
+aparecerCards(mostrarOrdem);
 }
 
 function pesquisarNome(e) {
-    e.preventDefault();
-    const pesquisaNome = document.getElementById("pesquisarNome").value
-    const devolveNome = filterNome(data.results, pesquisaNome)
-    aparecerCards(devolveNome);
+e.preventDefault();
+const pesquisaNome = document.getElementById("pesquisarNome").value
+const devolveNome = filterNome(devolvePersonagens, pesquisaNome)
+aparecerCards(devolveNome);
 }
 
-function limparFiltros() {
-    window.location.reload();
-}
-
-  function voltarTopo() {
-    window.scrollTo(0, 0);
-}
-
-  document.getElementById("selectOrdem").addEventListener("change", ordenarPersonagens);
-  document.getElementById("selectStatus").addEventListener("change", filtroStatus);
-  document.getElementById("selectGenero").addEventListener("change", filtroGenero);
-  document.getElementById("selectEspecie").addEventListener("change", filtroEspecie);
-  document.getElementById("pesquisarNome").addEventListener("keyup", pesquisarNome);
-  document.getElementById("limparFiltro").addEventListener("click", limparFiltros);
-  document.getElementById("voltar-ao-topo").addEventListener("click", voltarTopo);
+document.getElementById("selectOrdem").addEventListener("change", ordenarPersonagens);
+document.getElementById("selectStatus").addEventListener("change", filtrarStatus);
+document.getElementById("selectGenero").addEventListener("change", filtrarGenero);
+document.getElementById("selectEspecie").addEventListener("change", filtrarEspecie);
+document.getElementById("pesquisarNome").addEventListener("keyup", pesquisarNome);
+document.getElementById("limparFiltro").addEventListener("click", () => {window.location.reload()});
+document.getElementById("voltar-ao-topo").addEventListener("click", () => {window.scrollTo(0, 0);});
 
 
 
