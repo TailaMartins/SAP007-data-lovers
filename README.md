@@ -37,7 +37,7 @@ O planejamento e organização do projeto foi feito com método Kanban, utilizan
 ![](/Luan.png)
 
 ## Prototipo de Baixa e Alta Fidelidade
-O prototipo de alta fidelidade foi desemvolvido na ferramenta [Figma](https://www.figma.com/file/r6XaU7sjnIhepTMjsU1BW7/Prototipo-de-alta-fidelidade?node-id=0%3A1) e o prototipo de baixa qualidade está no link, pois serviu de inspiração para o desenvolvimento da interface do projeto 
+O prototipo de alta fidelidade foi desenvolvido na ferramenta [Figma](https://www.figma.com/file/r6XaU7sjnIhepTMjsU1BW7/Prototipo-de-alta-fidelidade?node-id=0%3A1) e o prototipo de baixa fidelidade está no link, pois serviu de inspiração para o desenvolvimento da interface do projeto 
 
 ## Funcionalidade
 
@@ -48,7 +48,8 @@ Os testes foram desenvolvidos para testar as funções implementadas, das quais 
 ![](/image.png)
 
 ## Testes Usabilidade
-Foi implementado o botão de voltar ao topo, pois o usuario sentiu falta dessa opção e as cores do projeto foram trocadas apos o feedback do usuario
+Foi implementado o botão de voltar ao topo, opção de pesquisa pelo nome e a opção de clicar na imagem e ser redirecionado para a pagina Adult Swin, apos interações dos usuarios.
+
 ![](/testeUser.png)
  
 
