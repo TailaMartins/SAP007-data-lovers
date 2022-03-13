@@ -37,17 +37,18 @@ O planejamento e organização do projeto foi feito com método Kanban, utilizan
 ![](/Luan.png)
 
 ## Prototipo de Baixa e Alta Fidelidade
-O prototipo foi feito na ferramenta [Figma](https://www.figma.com/file/r6XaU7sjnIhepTMjsU1BW7/Prototipo-de-alta-fidelidade?node-id=0%3A1)
+O prototipo de alta fidelidade foi desemvolvido na ferramenta [Figma](https://www.figma.com/file/r6XaU7sjnIhepTMjsU1BW7/Prototipo-de-alta-fidelidade?node-id=0%3A1) e o prototipo de baixa qualidade está no link, pois serviu de inspiração para o desenvolvimento da interface do projeto 
 
 ## Funcionalidade
 
 A aplicação foi desenvolvida pensando nos fãs e suas necessidades de visualizar e manipular dados da animação. Focando no interesse em conhecer mais sobre a série, os personagens, épisodios, entre outras curiosidades. Levando em consideração a funcionalidade, acessibilidade e a experiencia como um todo.
 
 ## Testes unitarios
+Os testes foram desenvolvidos para testar as funções implementadas, das quais são testadas os filtros, a ordenação, o retorno da quantidade de personagens por categoria e a pesquisa por nome de personagens, Os testes cobrem 100% das funções.
 ![](/image.png)
 
 ## Testes Usabilidade
-Foi constatado que todas as funcionalidades da aplicação, funcionam em mobile
+Foi implementado o botão de voltar ao topo, pois o usuario sentiu falta dessa opção e as cores do projeto foram trocadas apos o feedback do usuario
 ![](/testeUser.png)
  
 
