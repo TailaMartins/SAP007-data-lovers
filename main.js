@@ -8,7 +8,7 @@ function aparecerCards(data) {
   <div class="card">
     <div class="mostrar-cards">
       <div class="cards-frente">
-        <img src="${personagens.image}">
+        <img class="imagem-card" src="${personagens.image}">
         <p>Nome:${personagens.name}</p>
       </div>
       <div class="card-costa">
@@ -71,7 +71,7 @@ document.getElementById("selectGenero").addEventListener("change", filtrarGenero
 document.getElementById("selectEspecie").addEventListener("change", filtrarEspecie);
 document.getElementById("pesquisarNome").addEventListener("keyup", pesquisarNome);
 document.getElementById("limparFiltro").addEventListener("click", () => {window.location.reload()});
-document.getElementById("voltar-ao-topo").addEventListener("click", () => {window.scrollTo(0, 0);});
+document.getElementById("voltar-ao-topo").addEventListener("click", () => {window.scrollTo(0, 0)});
 
 
 
