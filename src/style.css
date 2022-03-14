@@ -2,23 +2,21 @@ body {
     font-family: 'Amatic SC', cursive;
     background: #0a0b0c;
 }
-
 .cabecalho {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #fefefe;
+    box-sizing: border-box;
 }
-
 .logo {
     width: 120px;
 }
-
 .menu-lista {
     display: flex;
     list-style: none;
+    box-sizing: border-box;
 }
-
 .itens {
     color: #202329;
     margin-right: 1.25rem;
@@ -26,32 +24,26 @@ body {
     text-transform: uppercase;
     font-size: 22px;
 }
-
 .itens:active {
     color: #0a0b0c;
     font-weight: bold;
 }
-
 .itens:hover {
     text-decoration: underline;
     color: #00FF00;
 }
-
 .imagem-nome {
     background: #fefefe;
     display: flex;
     justify-content: center;
 }
-
-.nome-rick-and-morty {
-    width: 90%;
+.logo-rick-and-morty {
+    width: 50%;
 }
-
 /*pagina home*/
 .sobre-secao {
     background: #0a0b0c;    
 }
-
 .sobre {
     padding: 0.5em;
     text-align: center;
@@ -60,32 +52,33 @@ body {
     font-size: 22px;
     font-family: Arial, Helvetica, sans-serif;
 }
-
 .sobre-secao p {
     text-align: justify;
     font-size: 1.35rem;
     font-weight: 900;
     color: #fefefe;
     padding: 1rem;
-
 }
-
 /*pagina personagens*/
 .menu {
     display: flex;
-    flex-direction: row-reverse;
     justify-content: center;
+    flex-direction: row-reverse;
     align-items: center;
     padding: 00.5rem;
+    box-sizing: border-box;
 }
 .barra-de-pesquisa{
     display: flex;
-    
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0.5rem 0 0.5rem;
 }
 .pesquisar {
-    margin: 6px;
+    width: 600px;
     border: none;
     padding: 0.9rem;
+    margin: 6px;
     font-family: 'Amatic SC', cursive;
     font-size: 1.2rem;
     border-radius: 500px;
@@ -94,6 +87,7 @@ body {
 ::placeholder {
     color: #0a0b0c;
 }
+
 .btn-filtro:first-child {
     margin-left: 0;
 }
@@ -110,7 +104,6 @@ body {
     background: #66ff66;
     color: #0a0b0c;
     font-weight: bold;
-
 }
 #percentualTotal {
     display: flex;
@@ -199,25 +192,36 @@ body {
     color: #0a0b0c;
 }
 
-
-@media screen and (max-width: 560px){
-    body {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    }    
+@media screen and (max-width: 499px ) {
+    .logo {
+        width: 70px;
+    }
+    .menu-nav{
+        padding-top: 0.5rem;
+    }
+    .logo-rick-and-morty {
+        width: 70%;
+    } 
+    .imagem-card{
+        width: 95%;
+    }
+    .card {
+        width: 200px;
+        height: 250px;
+    }
+    .pesquisar {
+        width: 270px;
+    }
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center; 
+    }
+    
+   
 }
 
-@media screen and (max-width: 480px) {
-    body {
-    font-size: 25px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: space-between;
-    justify-content: center;
-    }    
-}
+
+
 
 
 
