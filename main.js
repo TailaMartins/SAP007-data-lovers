@@ -3,6 +3,7 @@ import { filterData, sortByName,filterNome, computeStats} from './data.js';
 
 const devolvePersonagens = data.results;
 
+
 function aparecerCards(data) {
   document.getElementById("lista-cards").innerHTML = data.map((personagens) => ` 
   <div class="card">
@@ -18,7 +19,7 @@ function aparecerCards(data) {
           <p>Origem:${personagens.origin.name}</p>
           <p>Episodios que aparecem:${personagens.episode.length}</p>
           <p>Local onde vive:${personagens.location.name}</p>
-          <p>Data de criação: ${personagens.created}</p>  
+          <p>Data de criação: ${new Date(personagens.created).toLocaleDateString("pt-BR")}</p>  
       </div>
     </div>
   </div>
